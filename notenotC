@@ -1,0 +1,9 @@
+1, Using Ubuntu 18.04 WSL, already set the terminal default font to Lucida Console, but every time I open vim, it still turns to default.
+A: Press 'windows' --> 'Settings' --> 'Time & Language' --> 'Region' --> 'Additional date, time & regional settings' --> 'Region' ( or you can just open from the original control panel) --> 'Administrative' --> 'Language for non-Unicode programs'-'Change system locale...' --> check 'Use Unicode UTF-8 for worldwide language support' --> done!!
+There's a suggestion on the internet that you add a value in the registry:
+Press 'Windows' and input 'registry' to open the blue cube icon app.(Might need administrative)
+In 'HKEY_CURRENT_USER\Console\C:_Program Files_WindowsApps_52569scottxu.ArchLinux_1.0.28.0_x64__xhwh673y3hxf8_DistroLauncher_archlinux.exe', the folder under 'Console' should be your WSL. Crete a new DWORD value named 'CodePage' giving the value '0x01b5'(just copy it in). 
+
+I'm not sure if the second method is working since I did it first and I succeed after the first method. You can try the first one. Hope this answer is helpful for you
+Also, since this UTF-8 feature is still a preview version, might get some unknown problem, which I haven't met yet.
+.
