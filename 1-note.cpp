@@ -1,6 +1,7 @@
 // This is not a file for gcc, but you can select dome of the code to another file to complie.
 
 
+// 1...
 // Output digit of a number. 
 // You enter a number and it tells you how many digits it has.
 #include <stdio.h>
@@ -36,6 +37,7 @@ int main() {
 }
 
 
+// 2...
 // input a string with or without a space
 #include <stdio.h>
 // create a string array
@@ -58,6 +60,7 @@ int main() {
 }
 
 
+// 3...
 // print multiplication table
 #include <stdio.h>
 // main function
@@ -93,6 +96,7 @@ int main() {
 }
         
 
+// 4...
 // design a tiny random function
 // not quite understand this one though
 #include <stdio.h>
@@ -107,6 +111,7 @@ int main() {
 }
 
 
+// 5...
 // input 2 int number n & m, then input n int number [few number].
 // n <= 10, m <= 10000
 // from 1 to m, which number cannot be divided by any number in [few number]
@@ -151,6 +156,7 @@ int main() {
 }
 
 
+// 6...
 // use sprintf to achieve strlen, strcpy, strcat
 #include <stdio.h>
 char str1[1000], str2[1000];
@@ -176,6 +182,7 @@ int main() {
 }
 
 
+// 7...
 // Output every digit of a string without using strlen,
 // or any function that can count the string
 #include <stdio.h>
