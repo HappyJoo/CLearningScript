@@ -27,3 +27,11 @@ struct ListNode* reverseList(struct ListNode* head){
 }
 
 // Recursive way.
+struct ListNode* reverseList(struct ListNode* head){
+    if (head == NULL || head->next == NULL) return head; // Border condition.
+    struct ListNode *p=head->next; // p is the pointer of the next of head
+    head->next = NULL; // then turn head back
+    struct ListNode *new = reverseList(p); // recurse
+    p->next = head; // turn p back
+    return new; // return new
+}
