@@ -1,6 +1,7 @@
 
 #include <stdio.h>
-#include "geek_test.h" // 替换掉原 gtest/gtest.h 头文件
+#include <gtest/gtest.h>
+// #include "geek_test.h" // 替换掉原 gtest/gtest.h 头文件
 
 // 判断一个数字 x 是否是素数
 int is_prime(int x) {
@@ -25,5 +26,5 @@ TEST(test2, test_is_prime) {
 }
 
 int main() {
-    return RUN_ALL_TESTS()
+    return RUN_ALL_TESTS();
 }
