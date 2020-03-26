@@ -7,7 +7,7 @@ void register_##test_name##_##func_name() { \
 } \
 void test_name##_##func_name()
 
-typeof void (*test_function_t) ();
+typedef void (*test_function_t) ();
 
 test_function_t test_function_arr[100];
 int test_function_cnt = 0;
