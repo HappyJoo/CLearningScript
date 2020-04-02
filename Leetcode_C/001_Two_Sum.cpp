@@ -27,9 +27,9 @@ typedef struct {
 } NumMap;
 
 int Cmp_Array(const void* a, const void* b) {
-    NumMap* c = (NumMap*)a;
-    NumMap* d = (NumMap*)b;
-    return c->val > d->val;
+    // if the return-value is smaller than 0, qsort will order 'a' before 'b'.
+    // if greater than 0, 'b' will before 'a'.
+    return *(int*)a - *(int*)b;
 }
 int* twoSum(int* nums, int numsSize, int target, int* returnSize){
     NumMap* map = calloc(numsSize, sizeof(NumMap));
