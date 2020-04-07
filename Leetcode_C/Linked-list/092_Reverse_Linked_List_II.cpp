@@ -29,38 +29,38 @@ Reverse it. Then connect three part back together.
 //iterative way
 struct ListNode* reverseBetween(struct ListNode* head, int m, int n){
     if(head == NULL) return head; // border condition
-    struct ListNode *pre = head, *cur = NULL;
+    struct ListNode *cur = head, *pre = NULL;
 
     // move pointer to node m.
     while(m>1) // or m-1>0, the time of the loop is m-1.
     {
-        cur = pre;
-        pre = pre->next;
+        pre = cur;
+        cur = cur->next;
         m--;
         n--; // for the next while loop to be n-m times.
     }
 
     struct ListNode *tem, *pointerbeforestart, *tail;
-    pointerbeforestart = cur; // pointer brfore the start of the reverse part. need to point this to the reversed part
-    tail = pre; // pointer at the start of the reverse part. need to point this to the last part
+    pointerbeforestart = pre; // pointer brfore the start of the reverse part. need to point this to the reversed part
+    tail = cur; // pointer at the start of the reverse part. need to point this to the last part
 
     // reverse list from m to n.
     while(n>0)
     {
-        tem = pre->next;
-        pre->next = cur;
-        cur = pre;
-        pre = tem;
+        tem = cur->next;
+        cur->next = pre;
+        pre = cur;
+        cur = tem;
         n--;
     }
 
     // deal with when 'm=1'
     if (pointerbeforestart != NULL){
-        pointerbeforestart->next = cur;
-    } else head = cur;
+        pointerbeforestart->next = pre;
+    } else head = pre;
     
     // connect reversed list to the last part
-    tail->next = pre;
+    tail->next = cur;
 
     // return the first node of this list. we never change head.
     return head;
