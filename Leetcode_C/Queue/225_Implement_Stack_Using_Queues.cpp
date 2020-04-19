@@ -35,8 +35,7 @@ int myStackTop(MyStack* obj) {
 
 /** Returns whether the stack is empty. */
 bool myStackEmpty(MyStack* obj) {
-    if (obj->top != -1) return false;
-    else return true;
+    return obj->top == -1;
 }
 
 void myStackFree(MyStack* obj) {
